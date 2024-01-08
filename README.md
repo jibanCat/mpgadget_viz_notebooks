@@ -9,7 +9,7 @@ The tutorial is an adaptation of Yueying Ni's original notebook, modified to sui
 
 ## MP-Gadget Simulations
 
-MP-Gadget is a versatile and scalable cosmological simulation code. You can find more information and download the simulations from their GitHub page: [MP-Gadget Repository](http://github.com/MP-Gadget/MP-Gadget/).
+MP-Gadget is a versatile and scalable cosmological simulation code. You can find more information their GitHub page: [MP-Gadget Repository](http://github.com/MP-Gadget/MP-Gadget/).
 
 For accessing the simulation output, navigate to the `output` directory. Particle position data can be found in `output/PART_XXX/`, where `XXX` is the snapshot number. These snapshots represent various stages of cosmic evolution, with higher numbers indicating more recent phases of the Universe. To correlate snapshot numbers with redshift values, consult the `output/Snapshots.txt` file, which includes a detailed conversion table.
 
