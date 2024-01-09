@@ -1,16 +1,26 @@
-# mpgadget_viz_notebooks
+# MP-Gadget Visualization Notebooks
 
-Just a very simple Viz tutorial for MP-Gadget using Gaepsi2 (https://github.com/rainwoodman/gaepsi2).
+This repository hosts a straightforward visualization tutorial for MP-Gadget simulations using Gaepsi2, a versatile visualization tool. You can explore Gaepsi2 in detail [here](https://github.com/rainwoodman/gaepsi2).
 
-![image](https://github.com/jibanCat/mpgadget_viz_notebooks/assets/23435784/cae36339-65c8-4cec-aa19-e678e7fdb112)
-![image](https://github.com/jibanCat/mpgadget_viz_notebooks/assets/23435784/183ad60a-e6f1-4af4-994e-4db597d821bd)
+![Visualization Example 1](https://github.com/jibanCat/mpgadget_viz_notebooks/assets/23435784/cae36339-65c8-4cec-aa19-e678e7fdb112)
+![Visualization Example 2](https://github.com/jibanCat/mpgadget_viz_notebooks/assets/23435784/183ad60a-e6f1-4af4-994e-4db597d821bd)
 
-The tutorial is modified from yueyingn's notebook.
+The tutorial is an adaptation of Yueying Ni's original notebook, modified to suit the MP-Gadget framework.
 
-You can find MP-Gadget simulations here: http://github.com/MP-Gadget/MP-Gadget/
+## MP-Gadget Simulations
 
-To find simulation output, navigate to the `output` directory. Particle position data is stored within `output/PARTXXX/`, where `XXX` represents the simulation's snapshot number. These numbers correlate with different stages in cosmic evolution, with higher numbers indicating latter phase of the Universe. To understand the relationship between redshift and snapshot numbers, refer to the `output/Snapshots.`txt for a detailed conversion table.
+MP-Gadget is a versatile and scalable cosmological simulation code. You can find more information their GitHub page: [MP-Gadget Repository](http://github.com/MP-Gadget/MP-Gadget/).
 
-## Example simulation data for the tutorial
+For accessing the simulation output, navigate to the `output` directory. Particle position data can be found in `output/PART_XXX/`, where `XXX` is the snapshot number. These snapshots represent various stages of cosmic evolution, with higher numbers indicating more recent phases of the Universe. To correlate snapshot numbers with redshift values, consult the `output/Snapshots.txt` file, which includes a detailed conversion table.
 
-For the learning purpose, you can use my simulation file which I put on the google drive [here](https://drive.google.com/drive/folders/1ygmwjg_TT9qAgArnIUP1ZquuinlcyOCf?usp=share_link), this is a simulation with 128^3 particles (dark matter + gas particles) and in 60 cMpc/h box size. I only put the PART folder for the last snapshot.
+## Example Data for Tutorial
+
+To facilitate learning, I have provided a sample simulation dataset. This dataset features a simulation with \(128^3\) particles (both dark matter and gas particles) within a 60 cMpc/h box. The dataset includes only the `PART` folder for the final snapshot and is available on Google Drive: [Sample Simulation Data](https://drive.google.com/drive/folders/1ygmwjg_TT9qAgArnIUP1ZquuinlcyOCf?usp=share_link).
+
+## Parallel Visualization on Distributed Memory Systems
+
+Gaepsi2 offers multiprocessing support via *sharedmem*, but it's restricted to shared-memory architectures (single compute cluster nodes), posing challenges for visualizing large-scale simulations. To address this, we've included scripts for multi-node visualization using *mpi4py* in the 'scripts' directory. An example job submission script, `submit.sh`, is also provided to facilitate easy deployment on distributed systems.
+
+The image below is an example of a visualized simulation. This visualization portrays a quarterly-sliced box from a simulation which contains $3000^3$ dark matter particles. The rendering was accomplished in approximately 20 minutes using 20 nodes on the Frontera supercomputing system:
+
+![Visualization Example 3](assets/vis_Box1000_Part3000_0536_redshift0_ycut250.png)
