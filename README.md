@@ -20,3 +20,7 @@ To facilitate learning, I have provided a sample simulation dataset. This datase
 ## Parallel Visualization on Distributed Memory Systems
 
 Gaepsi2 offers multiprocessing support via *sharedmem*, but it's restricted to shared-memory architectures (single compute cluster nodes), posing challenges for visualizing large-scale simulations. To address this, we've included scripts for multi-node visualization using *mpi4py* in the 'scripts' directory. An example job submission script, `submit.sh`, is also provided to facilitate easy deployment on distributed systems.
+
+The image below is an example of a visualized simulation. This visualization portrays a quarterly-sliced box from a simulation which contains $3000^3$ dark matter particles. The rendering was accomplished in approximately 20 minutes using 20 nodes on the Frontera supercomputing system:
+
+![Visualization Example 3](assets/vis_Box1000_Part3000_0536_redshift0_ycut250.png)

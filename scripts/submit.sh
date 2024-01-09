@@ -5,6 +5,8 @@
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 
+# this script was used to work on the Frontera cluster
+
 hostname
 date
 
